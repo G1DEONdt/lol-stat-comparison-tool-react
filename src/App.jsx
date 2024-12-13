@@ -21,13 +21,6 @@ async function getData() {
 }
 
 export default function App() {
-
-  // const [data, setData] = useState(null);
-
-  // useEffect(() => {
-  //   getData().then((data) => setData(data)).then(console.log(data));
-  // }, []);
-
   return (
     <div className='w-screen h-screen bg-gray-800 grid grid-cols-5 grid-rows-12 gap-12'>
       <Homepage />
