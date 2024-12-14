@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Statpage from '../pages/Statpage';
+import { useNavigate } from 'react-router-dom';
 
 
 async function getData() {
@@ -24,6 +24,7 @@ export default function ChampionGrid() {
   const [data, setData] = useState([]);
   const [selectedChampions, setSelectedChampions] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getData()
@@ -31,12 +32,8 @@ export default function ChampionGrid() {
   }, []);
 
   useEffect(() => {
-    console.log(selectedChampions);
-    console.log(selectedIndex);
     if (selectedChampions.length == 2) {
-      console.log(`Sending data for ${selectedChampions[0].name} and ${selectedChampions[1].name}...`);
-
-      // RUN STAT PAGE
+      navigate("/stats", {state: {c1: selectedChampions[0], c2: selectedChampions[1]}});
     }
   }, [selectedChampions]);
   
