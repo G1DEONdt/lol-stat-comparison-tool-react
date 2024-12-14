@@ -38,7 +38,7 @@ export default function ChampionGrid() {
   }, [selectedChampions]);
   
   return (
-    <div className=' col-start-2 col-end-5 row-start-3 -row-end-3 '>
+    <div className=' col-start-2 col-end-8 row-start-3 -row-end-3 '>
       <div className='flex justify-between py-4 px-8'>
         <h2 className='text-3xl font-bold text-amber-600'>Select Champions</h2>
         <input className=" w-1/2 border-2 border-amber-600 bg-transparent px-4 text-amber-600 " placeholder="Search..." type="text" name="champion" id="champion" />

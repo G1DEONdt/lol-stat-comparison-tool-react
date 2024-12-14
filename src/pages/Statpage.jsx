@@ -50,16 +50,19 @@ export default function Statpage() {
   const location = useLocation();
   const c1 = createChampionObject(location.state.c1);
   const c2 = createChampionObject(location.state.c2);
-  console.log(c1);
-  console.log(c2);
 
   return (
-    <>
+      <>
+        <div className='absolute inset-0 bg-gradient-to-b [--tw-gradient-from-position:90%] from-transparent to-amber-600/10 pointer-events-none'></div>
         <Header />
-        <div className='row-start-3 col-start-2 col-end-5 border border-white border-dotted'>
-            <div className='stat-container'>
-                <Stat images={[c1.image, c2.image]} stats={[c1.attack, c2.attack]}></Stat>
-            </div>
+        <div className='relative mb-6 row-start-3 -row-end-1 col-start-2 col-end-8 flex flex-col gap-10 overflow-x-hidden overflow-y-scroll scrollbar-hide scroll-smooth'>
+            <Stat title="Attack" images={[c1.image, c2.image]} stats={[c1.attack, c2.attack]}></Stat>
+            <Stat title="Attack Speed" images={[c1.image, c2.image]} stats={[c1.attackSpeed, c2.attackSpeed]}></Stat>
+            {/* <Stat title="Attack Range" images={[c1.image, c2.image]} stats={[c1.attack, c2.attack]}></Stat> */}
+            <Stat title="HP" images={[c1.image, c2.image]} stats={[c1.hp, c2.hp]}></Stat>
+            <Stat title="HP Regen (per second)" images={[c1.image, c2.image]} stats={[c1.hpRegen, c2.hpRegen]}></Stat>
+            <Stat title="Armour" images={[c1.image, c2.image]} stats={[c1.armour, c2.armour]}></Stat>
+            <Stat title="Magic Resist" images={[c1.image, c2.image]} stats={[c1.magicResist, c2.magicResist]}></Stat>
         </div>
     </>
   )
