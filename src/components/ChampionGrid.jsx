@@ -18,9 +18,9 @@ async function getData() {
 
       } catch (error) {
         console.error(error.message);
-        return(getData());
       }
 }
+
 export default function ChampionGrid() {
   const [data, setData] = useState([]);
   const [selectedChampions, setSelectedChampions] = useState([]);
